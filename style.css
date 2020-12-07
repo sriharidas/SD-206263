@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .header{
     width:100vw;
-   max-height: 100vw;
+   max-height: 100vh;
     position: relative;
 }
 
@@ -57,7 +57,7 @@
 }
 .nav-close{
     display: inline;
-  visibility: hidden;
+  opacity:0;
 }
 .nav{
     width:60vw;
@@ -94,6 +94,7 @@
 .nav-list a{
     text-decoration: none;
     color:white;
+    
 }
 #toggle:target{
     visibility: hidden;
@@ -124,19 +125,24 @@
 .header-bg{
     height: calc(100vh - 100px);
     width: 100vw;
-    
+    z-index: -1;
     background: url('./img/header-bg.jpg') fixed no-repeat;
     background-size: cover;
 }
 .header-main{
         background:rgba(200,200,200,0.3);
         position: absolute;
-        padding:20% 15%;
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       align-content: center;
+       padding:0 15%;
         top:100px;
         left:0;
-        height: 100vh ;
+        height: calc(100vh - 100px);
         width: 100vw;
 }
+
 /* Login Form */
 
 .login-form{
@@ -159,8 +165,10 @@
 
 .login-form-container,.signin-form-container{
  
-    background:rgb(200,200,200,1);
+    background:#e5e5e5;
     width:40vw;
+    border-radius:20px ;
+    /*box-shadow: 6px 6px 3px 3px #f1f1f1 inset;*/
     max-height:800px;
     margin:auto;
 }
@@ -171,7 +179,7 @@
 }
 .login-form-header h2,.signin-form-header h2{
     font-size: 24px;
-    width:90%;
+    width:85%;
     height:80px;
     padding:20px 10px 40px 40px;
     float:left;
@@ -181,7 +189,7 @@
     width:auto;
     display: block;
     padding-top:20px;
-    padding-right:-50px;
+    padding-right:-75px;
     float:right;
 }
 .login-form-header span a,.signin-form-header span a{
@@ -200,6 +208,7 @@
 }
 .login-form-main label, .login-form-main input,
 .signin-form-main label,.signin-form-main input{
+    
     display:block;
     margin: 20px 50px;
 }
@@ -237,9 +246,11 @@
     animation: slider 12s 1;
     animation-delay: 5s;
     top:0;
+    left:0;
 
 }
 .slider-img-container img{
+    opacity: 0.7;
     width:100vw;
     height:100%;
  
@@ -270,24 +281,64 @@
 .main{
     width:100vw;
     min-height: 100vh;
-    background: rgba(200,200,200,0.5);
+    text-align: justify;
+    background: #f8f8f8;
 
 }
 .main-content{
     
     width:100vw;
     margin:auto;
-    min-height:100vh;
+    min-height:50vh;
 }
 .main-img, .main-cont-1,.main-cont-2{
    
     width:100vw;
     height:100vh;
 }
+.main-cont-1, .main-cont-2, .main-cont-3, .main-space{
+    width:100vw;
+    max-height: fit-content;
+    text-align: justify;
+}
+.main-cont-1 > div{
+    width: 60vw;
+    padding-right: 30px;
+    
+    margin: auto;
+}
+.main-cont-2{
+    width: 40vw;
+}
+.health-cont-1 > div{
+    width:100%;
+}
+.health-cont-2 > div{
+    width:100%;
+}
+.main-container
+{
+    display: flex;
+    width:80vw;
+    margin:auto;
+  
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+
+}
+.main-content > div{
+    width: 80vw;
+    margin: auto;
+}
 .main-cont-1 p,.main-cont-2 p{
     margin-left:20px;
     line-height: 1.5;
     padding: 10px 5px;
+}
+.main-cont-3{
+    display: none;
 }
 .main-cont-1,.main-cont-2{
     font-size: 24px;
@@ -306,59 +357,124 @@
     color:rgb(57, 12, 161);
     font-size:18px;
 }
+.main-title{
+    padding: 20px;
+    font-size:28px;
+    font:bold;
+    color: rgb(241, 15, 15);
+    width: 80vw;
+    border-bottom: 2px solid rgb(241, 15, 15);
+    text-align: center;
+    margin-bottom: 25px ;
+}
 .sub-list li{
     font-size:18px;
     color:rgb(57, 12, 161);
-    margin-left:30px;
+    line-height: 1.55;
+    margin-left:60px
 }
 .main-list li{
     color: rgb(238, 131, 10);
 
     margin-left:40px;
-    line-height: 1.75;;
+    line-height: 1.75;
+}
+.health-content > div, .services-content > div{
+    height:fit-content;
+}
+.health-content  h2,.services-content h2{
+    padding:25px 15px;
+}
+.health-cont-1{
+   min-height: 100vh;
+   padding: 70px 10px;
+}
+.health-cont-1 p,.servives-cont-1 p {
+    line-height:1.75;
+    margin-bottom: 25px;
+}
+
+.services-cont-1{
+    width: 50%;
+    padding:30px;
+ 
+}
+.services-cont-2{
+    width: 50%;
+
+}
+.services-cont-2  > div{
+    padding: 10px 0;
+    width:50%;
+}
+.service-content{
+    width:100vw;
+}
+.service-content > .main-container{
+    width: 80vw;
+    min-height: 100vh;
+}
+.service-content .main-container > div p{
+    
+    margin-bottom:25px;
+}
+.sub-list li span{
+    color: black;
 }
 .main-list li span{
     color:black;
 }
 .main-img{
+    margin:0;
     background: rgba(8, 2, 41,0.7) url('./img/coronavirus-line-art-5019475_1280.png') no-repeat fixed;
+    background-size: cover;
+}
+.health-img{
+    width:100vw;
+    height:100vh;
+    background: rgba(8, 2, 41,0.7) url('./img/health-bg.jpg') no-repeat fixed;
+    background-size: cover;
+}
+.services-img{
+    width:100vw;
+    height:100vh;
+    background: rgba(8, 2, 41,0.7) url('./img/services.jpg') no-repeat fixed;
     background-size: 100vw 100vh;
 }
-
 /* Gallery */
 .home-gallery{
     width:60vw;
     max-height:350vh;
     display: flex;
    flex-wrap: wrap;
-   justify-content: space-around;
-   align-content: space-around;
+   justify-content: center;
+   align-content: center;
    align-items: flex-start;
 
     margin:auto;
 }
 .home-gallery-container {
     position: relative;
-    width:200px;
-    margin:25px 10px;
-    height:200px;
+    width:250px;
+    margin:20px;
+    height:250px;
 }
 .home-gallery-container > .gallery-img{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .gallery-img img{
-    width:200px;
-    height:200px;
+    width:250px;
+    height:250px;
 }
 .gallery-desc{
     position: absolute;
     top:0;
     opacity: 0;
     left:0;
-    padding: 70px 45px;
-    width: 200px;
-    height: 200px;
+    padding: 90px 45px;
+    width: 250px;
+    height: 250px;
     text-align: center;
     z-index: 2;
 }
@@ -440,20 +556,54 @@
   
 }
 .img-container{
-    width: 80vw;
-    height: 100vh;
-    margin:auto;
+    width: fit-content;
+    height: auto;
+    margin: auto;
+    padding: 10px 0 0 0;
     overflow: scroll;
   
 
 }
 .img-container img{
     margin:0;
-    padding: 0;
     width:auto;
-    height: 100%;
+    height: auto;
     overflow: hidden;
 }
+.map > h2{
+    border-top:1px solid white;font-size:25px;padding:20px;text-align: center;
+}
+
+/* Healthcare */
+.health-header-bg{
+    background: url('./img/healthcare.jpg') no-repeat fixed;
+    background-attachment:cover;
+    width:100vw;
+    height:calc(100vh - 100px);
+}
+.health-main-img{
+    width: 70vw;
+    min-height: 100px;
+    padding:20px 25px; 
+    margin: auto;
+}
+.health-main-img > img{
+    width:80%;
+    height:auto;
+}
+/* Services */
+.services-header-bg{
+    background: url('./img/services-header-bg.jpg') no-repeat fixed;
+    background-size:cover;
+
+    height:calc(100vh - 100px);
+}
+.service-quote > q{
+    display: block;
+    width:60%;
+    margin:auto;
+}
+
 /*
 .slider-1{
     top:0;
@@ -470,13 +620,13 @@
 */
 /* Media queries */
 
-@media(max-width:800px){
+@media(max-width:1080px){
     *{
-        font-size: 15px;
+        font-size: 1rem;
     }
     .header-container{
         width:100vw;
-        max-height:80vh;
+        max-height:200vh;
     }
     .header-container > div{
         flex-direction: column;
@@ -485,6 +635,9 @@
     .header-top-left{
         width:100vw;
         justify-content: flex-start;
+    }
+    .header-main{
+        height: calc(100vh - 185px);
     }
     .header-top-right{
         width:auto;
@@ -497,13 +650,33 @@
     .nav{
         display: block;
     }
+    .main-img{
+        height:80vh;
+    }
+    .main-cont-2{
+        display: none;
+    }
+    .main-container{
+        flex-wrap: wrap;
+    }
+    .main-cont-3,.main-cont-1{
+        display:block;
+        width:90vw;
+        
+        height: fit-content;
+        margin: auto;
+        padding:15px;
+    }
+    .main-cont-1 > div{
+        width:90vw;
+    }
     #close{
         
         visibility: hidden;
     }
     .nav-close{
       
-        visibility: visible;
+        opacity: 1;
         position: absolute;
         width:80px;
         height: 30px;
@@ -590,6 +763,10 @@
         height: 80vh;
         z-index: 2;
     }
+    .health-header-bg {
+        height: 80vh;
+        z-index: 2;
+    }
 
     .signin-form, .login-form{
         width:90vw;
@@ -613,7 +790,7 @@
         padding: 0;
         margin: auto ;
     }
-   
+
 
     .sm-links{
         width:35px;
@@ -633,13 +810,40 @@
     .img-container{
         width:100vw;
     }
-
+    .service-quote > q{
+       
+        width:90%;
+        margin:auto;
+    }
+    .service-content div {
+        width: 100vw;
+        padding:10px;
+    }
+    .service-content > .main-container{
+        width:100vw;
+    }
+    .service-content div {
+        width:100%;
+        margin: 0;
+    
+    }
+    .service-content div p{
+        margin: 0;
+        padding-left:0 ;
+    }
 }
 
 
 @media(max-width:520px){
    .header{
        width:fit-content;
+       height: 100vh;
+   }
+   .header-container{
+    max-height: 200vh;
+   }
+   .header-main{
+    height: calc(100vh - 100px);
    }
    .company-name{
        font-size: 1.4em;
@@ -647,6 +851,9 @@
    }
    .tagline{
        font-size: 0.8em;
+   }
+   .nav{
+       margin-top:10px;
    }
     .nav-navbar > div{
         width:100vw;
@@ -697,20 +904,44 @@
         background: rgb(8, 2, 41);
         flex-direction: column;
     }*/
+    .main-content-title{
+        font-size: 18px;
+    }
+    .main-title{
+        text-align: left;
+        padding-left: 50px;
+    }
     .header-bg {
         height: 100vh;
         z-index: 2;
     }
+    .main-content > div{
+        padding:5px 2.5px;
+        padding:10px;
+        width:100vw;
+      
+    }
+    .main > div{
+        width:100vw;
+        padding:10px;
+    }
+    .main-content > h2{
+        margin-left:20px;
+    }
+  
     .slider{
+        margin-top:50%;
         width: 100vw;
-        height:60vh;
+        max-height:50vh;
+        z-index: 2;
     }
     .slider-img-container{
         width:307vw;
-        height:60vh;
+        height:100vh;
     }
     .slider-img-container > img{
-        height:60vh;
+
+        height:50vh;
     }
     .footer{
         width:100vw;
@@ -753,6 +984,9 @@
         align-content: center;
         justify-content: center;
     }
+    .home-gallery{
+        justify-content: space-around;
+    }
     .home-gallery-container > .gallery-img{
         width: 100px;
         height: 100px;
@@ -777,7 +1011,38 @@
         padding-top:15px;
         height: 100px;
     }
-
+    .health-img{
+        height: 60vh;
+        background-size:100vw 100vh;
+        padding: 0;
+        margin: 0;
+    }
+    .health-main-img{
+        display: block;
+        width:90%;
+        margin:auto;
+    }
+    .health-main-img > img{
+        width:85%;
+        height: auto;
+    }
+    .health-cont-1{
+        min-height: 50vh;
+    }
+    .health-cont-1 p{
+        line-height: 1.75;
+    }
+    .health-cont-1, .health-cont-1 p
+    {
+        margin:0;
+        padding: 0;
+    }
+    .sub-title{
+        margin: 0;
+        font-size: 16px;
+        padding: 0;
+    }
+   
 }
 
 @keyframes slider{
